@@ -1,3 +1,9 @@
+//These are my memory notes on what I think are useful and important about JS closures. 
+//You may find them useful, confusing, or utterly wrong. 
+//I hope the former.
+
+//https://codepen.io/vpelss/pen/raBBxJy
+
 //Function() is a function CONSTRUCTOR. You can create anonymous functions dynamicly
 addFunction = Function("a", "b", "return a + b");
 value = addFunction(5, 9);
