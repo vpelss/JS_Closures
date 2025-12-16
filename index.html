@@ -1,3 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  
+  
+  
+
+  <title>Closures</title>
+
+    <link rel="canonical" href="https://codepen.io/vpelss/pen/raBBxJy">
+  
+  
+  
+  
+
+  
+  
+  
+</head>
+
+<body>
+  My take on closures and a fake closure oop like idea. 
+
+See JS code and comments
+  
+    <script id="rendered-js" >
 //These are my memory notes on what I think are useful and important about JS closures. 
 //You may find them useful, confusing, or utterly wrong. 
 //I hope the former.
@@ -31,12 +60,12 @@ console.log("x0=" + x0);
 x1 = expressionFunction(); //x1 = 9 no persistance
 console.log("x1=" + x1);
 
-// () aroumd an Anonymous Function or a DECLARED Function creates a FUNCTION-OBJECT
+// () around an Anonymous Function or a DECLARED Function creates a FUNCTION-OBJECT
 functionObject = (function(){
   a=9;
 });
 
-//SELF-INVOKING Functions are function EXPRESSIONS or FUNCTION-OBJECTS followed by () and execute automatically
+//SELF-INVOKING Functions are function EXPRESSIONS or FUNCTION-OBJECTS followed by () and they execute right away
 // a = function(){h=8;}(); or (function(){h=8;})()
 x3 = (function () {
   return 9;
@@ -55,9 +84,9 @@ assignInnerFunction = outerFunction();
 outputInnerFunction = assignInnerFunction();
 console.log("outputInnerFunction=" + outputInnerFunction);
 
-//CLOSURE uses SELF-INVOKING function EXPRESSIONS or SELF-INVOKING FUNCTION-OBJECTS with NESTED functions to keep the inner state (variables) of the enclosing function persistant
+//CLOSURE uses SELF-INVOKING function EXPRESSIONS or SELF-INVOKING FUNCTION-OBJECTS that return a NESTED functions to keep the inner state (variables) of the enclosing function persistant
 //since this SELF-INVOKING function EXPRESSION returns a function, we have a closure
-//the returning function is attached to a global variable which keeps the enclosing function and it's variables persitant also. It is like the returned function is jaming it's foot in the door. The term closure to me seems wrong. It is more like an opener.
+//the returning function is attached to a global variable which keeps the enclosing function and it's variables persitant. It is like the returned function is jaming it's foot in the door. The term closure to me seems wrong. It is more like an opener.
 let closureFunction = (function () {
   let a = 9;
   return function (inp) {
@@ -120,3 +149,9 @@ var fake_function_persistant_states = {
 fake_function_persistant_states.set(92);
 val = fake_function_persistant_states.get(); //92
 console.log("val="+val);
+  </script>
+
+  
+</body>
+
+</html>
